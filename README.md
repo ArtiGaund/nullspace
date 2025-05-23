@@ -28,3 +28,65 @@ Auth	NextAuth.js
 Styling	Tailwind CSS
 Collaboration	Yjs (optional)
 Deployment	Vercel + MongoDB Atlas
+
+Will try to follow this project structure
+
+nullspace/
+├── app/                             # App Router entry point
+│   ├── layout.js                    # Root layout (shared across pages)
+│   ├── page.js                      # Landing page ("/")
+│   ├── dashboard/                   # Authenticated user dashboard
+│   │   └── page.js
+│   ├── room/                        # Dynamic room routes
+│   │   └── [roomId]/               
+│   │       └── page.js              # Collaborative room page
+│   ├── flashcards/                 
+│   │   └── page.js                  # Flashcard creation/revision UI
+│   ├── login/                       # Login page (NextAuth)
+│   │   └── page.js
+│   ├── register/                    # Signup page
+│   │   └── page.js
+│   └── api/                         # (Optional: local API routes or NextAuth callbacks)
+│       └── auth/                   
+│           └── [...nextauth]/route.js
+│
+├── components/                      # UI components
+│   ├── Navbar.js
+│   ├── Sidebar.js
+│   ├── Editor.js
+│   ├── ChatPanel.js
+│   ├── FlashcardCard.js
+│   └── RoomHeader.js
+│
+├── context/                         # React Context Providers
+│   ├── AuthContext.js
+│   └── SocketContext.js
+│
+├── hooks/                           # Custom React hooks
+│   └── useSocket.js
+│   └── useAuth.js
+│
+├── lib/                             # Utilities (e.g. auth, helpers)
+│   └── auth.js
+│   └── db.js
+│
+├── styles/
+│   ├── globals.css                  # TailwindCSS base styles
+│   └── editor.css                   # Styles for custom components
+│
+├── public/                          # Static assets (icons, logo, images)
+│
+├── server/                          # Express.js backend server
+│   ├── controllers/                 # Business logic
+│   ├── models/                      # Mongoose schemas
+│   ├── routes/                      # Express API endpoints
+│   ├── sockets/                     # Socket.IO events
+│   ├── config/                      # DB config, environment
+│   └── server.js                    # Express entry point
+│
+├── .env.local                       # Frontend environment variables (NEXT_PUBLIC_*)
+├── .env                             # Backend environment variables
+├── tailwind.config.js
+├── next.config.js
+├── package.json
+└── README.md
