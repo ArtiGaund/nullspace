@@ -2,9 +2,6 @@ import Image from "next/image";
 import { MailIcon } from "@/components/icons/mail-icon";
 import { Input } from "@/components/ui/input";
 import { IconLockAccess, IconBrandGoogle, IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
-// import RectangleBlurBg from "@/components/sub-components/RectangleBlurBg";
-
-// 👇 Move this definition ABOVE the Login component and fix the props
 function RectangleBlurBg({ gradient, blur, opacity = "opacity-40", shadow = "", className }) {
     return (
         <div className={`absolute rounded-full ${gradient} ${blur} ${opacity} ${shadow} ${className}`} />
